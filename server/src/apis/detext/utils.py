@@ -31,10 +31,10 @@ def predict(text):
 
   # Output
   if label == "Fraud":
-    result["fraud_confidence"] = round(confidence_score)
+    result["fraud_confidence"] = round(confidence_score * 100)
     result["safe_confidence"] = 100 - result["fraud_confidence"]
   elif label == "Safe":
-    result["safe_confidence"] = round(confidence_score)
+    result["safe_confidence"] = round(confidence_score * 100)
     result["fraud_confidence"] = 100 - result["safe_confidence"]
     
   return result

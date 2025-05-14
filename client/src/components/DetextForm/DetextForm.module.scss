@@ -1,0 +1,57 @@
+@use "../../styles/utils/responsive" as responsive;
+@use "../../styles/utils/mixins-screens" as screens;
+@use "../../styles/utils/mixins-shadows" as shadows;
+@use "../../styles/abstracts/variables-colors" as colors;
+@use "../../styles/utils/mixins-text-sizes" as textSizes;
+
+.detextForm {
+  padding: 30px;
+  margin-top: 70px;
+  border-radius: 10px;
+  background-color: colors.$white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include shadows.shadow;
+
+  .form {
+    textarea {
+      width: 100%;
+      outline: 0;
+      border: 0;
+      resize: none;
+      height: 300px;
+    }
+  }
+
+  .result {
+    background-color: colors.$slate-1;
+    padding: 20px;
+    border-radius: 5px;
+
+    @include shadows.shadow;
+
+    .title {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 3px;
+      background-color: colors.$white;
+
+      border: 1px rgba($color: colors.$primary, $alpha: 0.5) solid;
+      @include textSizes.text-base;
+    }
+  }
+}
+
+@include screens.tabletAndDesktop {
+  .detextForm {
+    flex-direction: row;
+
+    .result,
+    .form {
+      width: 100%;
+    }
+  }
+}

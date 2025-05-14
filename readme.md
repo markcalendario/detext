@@ -118,7 +118,7 @@ Once the project is set up and running, you can:
 
 1. **Run the React frontend**:
 
-   - Open a web browser and navigate to `http://localhost:3000` (default port for React).
+   - Open a web browser and navigate to `http://localhost:5173` (default port for React).
    - Input text into the provided form, and the system will classify whether it is **safe** or **fraud**.
 
 2. **Access FastAPI Documentation**:

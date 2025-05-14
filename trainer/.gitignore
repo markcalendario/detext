@@ -1,3 +1,6 @@
 # Virtual Environment
 venv
 
+# Output
+out/detext_dataset
+!out/detext_dataset/.gitkeep

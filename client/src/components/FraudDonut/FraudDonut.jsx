@@ -3,12 +3,12 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function FraudDonut({ fraudConfidence }) {
+export default function FraudDonut({ safeConfidence, fraudConfidence }) {
   const data = {
     labels: ["Safe", "Potential Fraud"],
     datasets: [
       {
-        data: [100 - fraudConfidence, fraudConfidence],
+        data: [safeConfidence, fraudConfidence],
         backgroundColor: ["#cbd5e1", "#c03447"]
       }
     ]

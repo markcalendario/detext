@@ -1,7 +1,10 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Button } from "../Buttons/Buttons.jsx";
 import styles from "./DetextForm.module.scss";
 
-export default function DetextForm() {
+export default function DetextForm({ onSubmit, fraudConfidence }) {
   const [text, setText] = useState("");
 
   const handleTextareaChange = (evt) => setText(evt.target.value);
@@ -14,6 +17,11 @@ export default function DetextForm() {
           placeholder="Insert text here"
           onChange={handleTextareaChange}
         />
+
+        <Button onClick={onSubmit}>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          Analyze Text
+        </Button>
       </div>
       <div className={styles.result}>
         <h1 className={styles.title}>Analysis Result</h1>
